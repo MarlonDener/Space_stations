@@ -15,6 +15,7 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 * [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 * [Graphql](https://graphql.org/)
 * [Eslint](https://eslint.org/)
+* [JWT](https://jwt.io/)
 
 ---
 
@@ -75,7 +76,8 @@ Inicie o projeto:
 # Inicie em modo de desenvolvimento
 $ npm run dev
 ```
-
+<br>
+<hr>
 ## Contatos
 
 <a href="https://www.linkedin.com/in/marlondener/" target="_blank">
