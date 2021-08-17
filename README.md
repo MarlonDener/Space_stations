@@ -36,6 +36,9 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
  - Essa recarga deve estar atrelado a um usuário - sinta-se livre para implementar da maneira que você desejar.
  - Um usuário só pode ter no máximo uma recarga em andamento
 
+[ x ] Adicione autenticação (apenas um usuário autenticado poderá fazer uma recarga ou uma reserva)
+
+---
 
 <h2>🔌 Getting started</h2>
 
@@ -73,7 +76,22 @@ Inicie o projeto:
 $ npm run dev
 ```
 
-## Contatos :paperclip:
+
+## 🦸 Autor
+
+<a href="https://www.linkedin.com/in/marlondener">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/70349830?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Marlon Dener</b></sub>
+</a>
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-marlondener-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/marlondener/)](https://www.linkedin.com/in/marlondener/)
+
+---
+
+
+## Contatos
 
 <a href="https://www.linkedin.com/in/marlondener/" target="_blank">
   <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
@@ -85,4 +103,6 @@ $ npm run dev
  
  <hr>
 
+
+Feito com ❤️ por Marlon Dener
 
