@@ -65,10 +65,13 @@ const resolvers = {
 
       return { token, user }
     },
-    recharge: async (_, args) => {
+    recharge: async (_, args, context, __) => {
       const verifyClient = await MongoRecharge.find({
         client: args.idClient
       })
+      if (!context.token) {
+        throw new ApolloError('You are not authenticated', 'ALERT')
+      }
       const dataActual = new Date()
       await MongoRecharge.deleteMany({ endDate: { $lte: dataActual } })
       if (verifyClient.length) {
