@@ -76,21 +76,6 @@ Inicie o projeto:
 $ npm run dev
 ```
 
-
-## 🦸 Autor
-
-<a href="https://www.linkedin.com/in/marlondener">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/70349830?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Marlon Dener</b></sub>
-</a>
-<br />
-
-[![Linkedin Badge](https://img.shields.io/badge/-marlondener-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/marlondener/)](https://www.linkedin.com/in/marlondener/)
-
----
-
-
 ## Contatos
 
 <a href="https://www.linkedin.com/in/marlondener/" target="_blank">
@@ -102,7 +87,17 @@ $ npm run dev
  </a>
  
  <hr>
+ 
+ ## 🦸 Autor
 
+<a href="https://www.linkedin.com/in/marlondener">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/70349830?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Marlon Dener</b></sub>
+</a>
+<br />
+
+---
 
 Feito com ❤️ por Marlon Dener
 
