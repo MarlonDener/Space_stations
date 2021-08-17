@@ -82,10 +82,11 @@ $ npm run dev
  ## 🦸 Autor
 
 <a href="https://www.linkedin.com/in/marlondener">
- <sub>Marlon Dener</sub>
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/70349830?v=4" width="100px;" alt=""/>
  <br />
+  <sub>Marlon Dener</sub>
 </a>
+<br>
 <a href="https://www.linkedin.com/in/marlondener/" target="_blank">
   <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
