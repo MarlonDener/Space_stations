@@ -9,11 +9,11 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 ---
 
 ## Tecnologias 💻 <a name="technologies"></a>
-* __[Node.js](https://nodejs.org/en/)__ - Baixe a versão recomendada LTS.
-* __[MongoDB](https://www.mongodb.com/)
-* __[Apollo Server](https://www.apollographql.com/docs/apollo-server/)
-* __[Graphql](https://graphql.org/)
-* __[Eslint](https://eslint.org/)
+* [Node.js](https://nodejs.org/en/)
+* [MongoDB](https://www.mongodb.com/)
+* [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+* [Graphql](https://graphql.org/)
+* [Eslint](https://eslint.org/)
 
 ---
 
@@ -70,7 +70,7 @@ Inicie o projeto:
 ```bash
 # Inicie em modo de desenvolvimento
 $ npm run dev
-
+```
 
 ## Contatos :paperclip:
 
