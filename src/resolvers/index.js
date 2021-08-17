@@ -15,6 +15,10 @@ const resolvers = {
     stations: async () => {
       const allStations = await AddPlanet.find({ installedStations: { $exists: true, $not: { $size: 0 } } })
       return allStations
+    },
+    getAllUsers: async () => {
+      const users = await MongoUser.find().select(['_id', 'name', 'email'])
+      return users
     }
   },
   Mutation: {

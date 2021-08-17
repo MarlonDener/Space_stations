@@ -28,16 +28,24 @@ const typeDefs = gql`
         client: String
         rechargePlace: String
     }
+
+    type allUsers {
+        _id: String
+        email: String
+        name: String
+    }
   
     type Query {
         suitablePlanets: [Planet]
         stations: [allStations]!
+        getAllUsers: [allUsers]!
     }
     type Mutation {
         installStation(id: String, installedStations: String): Planet!  
         createUser(name: String, email: String, password: String): User!
         signIn(email: String, password: String): Login!
         recharge(idClient: String, idPlanet: String, endDate: String): rechargeType!
+        
     }
 
 `
