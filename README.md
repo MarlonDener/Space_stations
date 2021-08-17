@@ -77,19 +77,8 @@ Inicie o projeto:
 $ npm run dev
 ```
 <br>
-<hr>
-## Contatos
+--- 
 
-<a href="https://www.linkedin.com/in/marlondener/" target="_blank">
-  <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="mailto:marlondener01@gmail.com" target="_blank">
-   <img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/>
- </a>
- 
- <hr>
- 
  ## 🦸 Autor
 
 <a href="https://www.linkedin.com/in/marlondener">
@@ -97,6 +86,13 @@ $ npm run dev
  <br />
  <sub><b>Marlon Dener</b></sub>
 </a>
+<a href="https://www.linkedin.com/in/marlondener/" target="_blank">
+  <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:marlondener01@gmail.com" target="_blank">
+   <img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/>
+ </a>
 <br />
 
 ---
