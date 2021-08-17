@@ -59,7 +59,7 @@ $ npm install
 
 >⚠️ Você precisa ter uma conta no MongoDB
  
-Crie o arquivo ``.env`` na raiz do projeto e defina a variáveis de ambiente(MONGO_URL).
+Crie o arquivo ``.env`` na raiz do projeto e defina a variável de ambiente(MONGO_URL).
 ```env
 
 MONGO_URL: mongodb+srv://<username>:<password>@cluster0.rijg6.mongodb.net/VoltbrasDB?retryWrites=true&w=majority
