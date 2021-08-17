@@ -3,7 +3,7 @@
 <p>Desafio proposto pela <a href="https://voltbras.com.br/">Voltbras</a> :globe_with_meridians: para processo de seleção.</p>
 ---
 <br>
-## Descrição 📌 <a name="description"></a>
+<h2>Descrição 📌 <a name="description"></a></h2>
 
 Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
 
