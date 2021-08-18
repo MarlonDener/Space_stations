@@ -41,6 +41,42 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 
 ---
 
+<br>
+<h2 style="align-center">Demonstração do projeto <a name="description"></a></h2>
+
+---
+
+## :zap: SuitablePlanets
+<p>Essa query deve ser a primeira executada, ela pega os dados disponibilizado pela API da nasa e retorna os planetas com a massa equivalente a 10 vezes a massa de Júpiter.</p>
+
+![suitablePlanets](https://user-images.githubusercontent.com/70349830/129965446-e7bc3289-392c-407d-82b7-b4c979cbc6d8.gif)
+
+<br>
+
+## :zap: installStation
+
+<p>Dado um planeta, essa Mutation instala uma estação de carregamento.</p>
+
+ ![installStation](https://user-images.githubusercontent.com/70349830/129966588-237ffc5a-98a0-418c-aefe-b0f379c075c2.gif)
+ 
+<br>
+
+## :zap: Stations
+
+<p>Uma query para listar todas as estações que existem, e seus determinados planetas.</p>
+
+![stations](https://user-images.githubusercontent.com/70349830/129968836-2c094d58-7e19-46e9-aa82-3d11a945843a.gif)
+
+<br>
+
+## :zap: Recharge
+
+<p>Dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada, lembrando que você precisa estar autenticado para realizar o cadastro.</p>
+
+![recharge](https://user-images.githubusercontent.com/70349830/129969108-c66b4f81-049c-4f3d-8b46-1103f9c8645a.gif)
+
+<br>
+
 <h2>🔌 Getting started</h2>
 
 Faça o clone do projeto:
