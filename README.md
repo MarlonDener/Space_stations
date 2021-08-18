@@ -5,7 +5,7 @@
 <br>
 <h2>Descrição 📌 <a name="description"></a></h2>
 
-Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
+Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
 
 ---
 
