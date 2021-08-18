@@ -47,13 +47,13 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 ---
 
 ## :zap: SuitablePlanets
-<p>Essa query deve ser a primeira executada, ela pega os dados disponibilizado pela API da nasa e retorna os planetas com a massa equivalente a 10 vezes a massa de Júpiter.</p>
+<p>Essa query deve ser a primeira executada, ela pega os dados disponibilizado pela API da nasa e retorna os planetas com a gravidade alta.</p>
 
 ![suitablePlanets](https://user-images.githubusercontent.com/70349830/129965446-e7bc3289-392c-407d-82b7-b4c979cbc6d8.gif)
 
 <br>
 
-## :zap: installStation
+## :zap: InstallStation
 
 <p>Dado um planeta, essa Mutation instala uma estação de carregamento.</p>
 
@@ -66,6 +66,14 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 <p>Uma query para listar todas as estações que existem, e seus determinados planetas.</p>
 
 ![stations](https://user-images.githubusercontent.com/70349830/129968836-2c094d58-7e19-46e9-aa82-3d11a945843a.gif)
+
+<br>
+
+## :zap: Authenticated & CreateUser
+
+<p>Apenas um usuário autenticado poderá fazer uma recarga ou uma reserva</p>
+
+![authenticate](https://user-images.githubusercontent.com/70349830/129972083-e0966c64-beca-4736-9e35-eadbbb1036ae.gif)
 
 <br>
 
