@@ -29,7 +29,7 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 
  [ x ] Use um RESTDataSource para pegar os dados da NASA
 
- [ x ]Crie uma query stations, que irá listar todas as estações instaladas nos planetas
+ [ x ] Crie uma query stations, que irá listar todas as estações instaladas nos planetas
  
  [ x ] Crie uma mutation recharge, que dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada.
 
@@ -49,7 +49,7 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 ## :zap: SuitablePlanets
 <p>Essa query deve ser a primeira executada, ela pega os dados disponibilizado pela API da nasa e retorna os planetas com a gravidade alta.</p>
 
-![suitablePlanets](https://user-images.githubusercontent.com/70349830/129965446-e7bc3289-392c-407d-82b7-b4c979cbc6d8.gif)
+![installStations](https://user-images.githubusercontent.com/70349830/129973587-fd30ddb0-1856-481f-bceb-7f065a52daf6.gif)
 
 <br>
 
