@@ -7,11 +7,17 @@ class RechargeService {
     const verifyClient = await MongoRecharge.find({
       client: args.idClient
     })
+
+    const currentDate = new Date()
+
+    if (new Date(args.endDate) < currentDate) {
+      throw new ApolloError('The date cannot be less than current date', 'INVALID DATE')
+    }
+
     if (!context.token) {
       throw new ApolloError('You are not authenticated', 'ALERT')
     }
     RechargeUtils.changeWhenRechargeOver()
-
     if (verifyClient.length) {
       throw new ApolloError('You can only have one recharge in progress!', 'MY_ERROR_CODE')
     }
