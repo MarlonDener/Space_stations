@@ -5,7 +5,7 @@
 <br>
 <h2>Descrição 📌 <a name="description"></a></h2>
 
-Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
+Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
 
 ---
 
@@ -29,7 +29,7 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 
  [ x ] Use um RESTDataSource para pegar os dados da NASA
 
- [ x ]Crie uma query stations, que irá listar todas as estações instaladas nos planetas
+ [ x ] Crie uma query stations, que irá listar todas as estações instaladas nos planetas
  
  [ x ] Crie uma mutation recharge, que dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada.
 
@@ -40,6 +40,50 @@ Descobrir em quais planetas a empresa Voltbras pode instalar seus novos postos d
 [ x ] Adicione autenticação (apenas um usuário autenticado poderá fazer uma recarga ou uma reserva)
 
 ---
+
+<br>
+<h2 style="align-center">Demonstração do projeto <a name="description"></a></h2>
+
+---
+
+## :zap: SuitablePlanets
+<p>Essa query deve ser a primeira executada, ela pega os dados disponibilizado pela API da nasa e retorna os planetas com a gravidade alta.</p>
+
+![installStations](https://user-images.githubusercontent.com/70349830/129973587-fd30ddb0-1856-481f-bceb-7f065a52daf6.gif)
+
+<br>
+
+## :zap: InstallStation
+
+<p>Dado um planeta, essa Mutation instala uma estação de carregamento.</p>
+
+ ![installStation](https://user-images.githubusercontent.com/70349830/129966588-237ffc5a-98a0-418c-aefe-b0f379c075c2.gif)
+ 
+<br>
+
+## :zap: Stations
+
+<p>Uma query para listar todas as estações que existem, e seus determinados planetas.</p>
+
+![stations](https://user-images.githubusercontent.com/70349830/129968836-2c094d58-7e19-46e9-aa82-3d11a945843a.gif)
+
+<br>
+
+## :zap: Authenticated & CreateUser
+
+<p>Apenas um usuário autenticado poderá fazer uma recarga ou uma reserva</p>
+
+![authenticate](https://user-images.githubusercontent.com/70349830/129972083-e0966c64-beca-4736-9e35-eadbbb1036ae.gif)
+
+<br>
+
+## :zap: Recharge
+
+<p>Dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada, lembrando que você precisa estar autenticado para realizar o cadastro.</p>
+
+![recharge](https://user-images.githubusercontent.com/70349830/129969108-c66b4f81-049c-4f3d-8b46-1103f9c8645a.gif)
+
+<br>
 
 <h2>🔌 Getting started</h2>
 
