@@ -3,9 +3,9 @@ const MongoRecharge = require('../models/Recharge')
 class RechargeUtils {
   async RechargeData (allHistory) {
     const dataAboutRecharge = []
-    let isMinutes = false
 
     allHistory.forEach((element, index) => {
+      let isMinutes = false
       const now = allHistory[index].endDate
       const past = allHistory[index].initialDate
       const diff = Math.abs(now.getTime() - past.getTime())
@@ -15,7 +15,6 @@ class RechargeUtils {
         isMinutes = true
         hoursOrMinutes = Math.ceil(diff / (1000 * 60))
       }
-
       const duration = `${hoursOrMinutes} ${isMinutes ? 'minutes' : 'hours'} recharge`
       const end = allHistory[index].endDate.toLocaleString()
       const initial = allHistory[index].initialDate.toLocaleString()

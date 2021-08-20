@@ -1,5 +1,6 @@
 const MongoRecharge = require('../models/Recharge')
 const RechargeUtils = require('../utils/RechargeData')
+const MongoPlanets = require('../models/PlanetStation')
 const { ApolloError } = require('apollo-server')
 
 class RechargeService {
@@ -8,25 +9,39 @@ class RechargeService {
       client: args.idClient
     })
 
+    if (!context.token) {
+      throw new ApolloError('You are not authenticated', 'ALERT')
+    }
+    const verifyHasStation = await MongoPlanets.findById(args.idPlanet)
+
+    if (!verifyHasStation.hasStation) {
+      throw new ApolloError('Sorry, there is no station on this planet!', 'MY_ERROR_CODE')
+    }
+
     const currentDate = new Date()
 
     if (new Date(args.endDate) < currentDate) {
       throw new ApolloError('The date cannot be less than current date', 'INVALID DATE')
     }
-
-    if (!context.token) {
-      throw new ApolloError('You are not authenticated', 'ALERT')
-    }
-    RechargeUtils.changeWhenRechargeOver()
-    if (verifyClient.length) {
-      throw new ApolloError('You can only have one recharge in progress!', 'MY_ERROR_CODE')
-    }
     const verifyPlanet = await MongoRecharge.find({
       rechargePlace: args.idPlanet
     })
 
+    RechargeUtils.changeWhenRechargeOver()
     if (verifyPlanet.length) {
-      throw new ApolloError('Sorry, this station is busy!', 'MY_ERROR_CODE')
+      verifyPlanet.forEach((element, index) => {
+        if (verifyPlanet[index].isActiveRecharge) {
+          throw new ApolloError('Sorry, this station is busy!', 'MY_ERROR_CODE')
+        }
+      })
+    }
+
+    if (verifyClient.length) {
+      verifyClient.forEach((element, index) => {
+        if (verifyClient[index].isActiveRecharge) {
+          throw new ApolloError('You can only have one recharge in progress!', 'ALREADY RECHARGE')
+        }
+      })
     }
 
     const insertQuery = await MongoRecharge.create({

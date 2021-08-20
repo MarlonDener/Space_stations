@@ -7,6 +7,7 @@ const RechargeService = require('../services/RechargeService')
 const InstallStationService = require('../services/InstallStationService')
 
 const RechargeUtils = require('../utils/RechargeData')
+const { ApolloError } = require('apollo-server')
 
 const resolvers = {
   Query: {
@@ -22,12 +23,18 @@ const resolvers = {
       const users = await MongoUser.find().select(['_id', 'name', 'email'])
       return users
     },
-    stationHistory: async () => {
+    stationHistory: async (_, args) => {
       RechargeUtils.changeWhenRechargeOver()
+      try {
+        const allHistory = await MongoRecharge.find(
+          { rechargePlace: args.idPlanet }
+        ).populate('client')
 
-      const allHistory = await MongoRecharge.find().populate('client')
-      const dataAboutRecharge = RechargeUtils.RechargeData(allHistory)
-      return dataAboutRecharge
+        const dataAboutRecharge = RechargeUtils.RechargeData(allHistory)
+        return dataAboutRecharge
+      } catch (err) {
+        throw new ApolloError('planet does not exist, or does not have a station')
+      }
     }
   },
   Mutation: {

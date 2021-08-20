@@ -52,7 +52,7 @@ const typeDefs = gql`
         suitablePlanets: [Planet]
         stations: [allStations]!
         getAllUsers: [allUsers]!
-        stationHistory: [stationHistoryType]
+        stationHistory(idPlanet: String): [stationHistoryType]
     }
     type Mutation {
         installStation(id: String, installedStations: String): install!  

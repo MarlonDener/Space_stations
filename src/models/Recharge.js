@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-  isBusy: {
-    type: Boolean,
-    default: false
-  },
   client: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'UserVolt'
