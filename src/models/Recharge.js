@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
   endDate: {
     type: Date,
     default: Date.now
+  },
+  isActiveRecharge: {
+    type: Boolean,
+    default: true
   }
 })
 

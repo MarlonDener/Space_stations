@@ -7,10 +7,15 @@ const typeDefs = gql`
         email: String
     }
      type Planet {
-        _id: String
         name: String
         mass: Float
         hasStation: Boolean
+    }
+
+    type install {
+        name: String
+        mass: Float
+        _id: String
     }
     
     type allStations {
@@ -34,14 +39,23 @@ const typeDefs = gql`
         email: String
         name: String
     }
+    type stationHistoryType {
+        _id: String
+        client: User
+        finalDate: String
+        started_in: String
+        duration: String
+        isActiveRecharge: Boolean
+    }
   
     type Query {
         suitablePlanets: [Planet]
         stations: [allStations]!
         getAllUsers: [allUsers]!
+        stationHistory: [stationHistoryType]
     }
     type Mutation {
-        installStation(id: String, installedStations: String): Planet!  
+        installStation(id: String, installedStations: String): install!  
         createUser(name: String, email: String, password: String): User!
         signIn(email: String, password: String): Login!
         recharge(idClient: String, idPlanet: String, endDate: String): rechargeType!

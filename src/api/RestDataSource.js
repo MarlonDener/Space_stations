@@ -1,5 +1,5 @@
 const { RESTDataSource } = require('apollo-datasource-rest')
-const AddPlanet = require('../database/PlanetStation')
+const AddPlanet = require('../models/PlanetStation')
 
 class GetDataNasa extends RESTDataSource {
   constructor () {
