@@ -36,7 +36,6 @@ class GetDataNasa extends RESTDataSource {
     })
     if (verify) {
       const getPlanets = AddPlanet.find()
-      console.log(getPlanets)
       return getPlanets
     } else {
       AddPlanet.insertMany(suitablePlanets)
