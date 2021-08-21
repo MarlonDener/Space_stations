@@ -1,8 +1,8 @@
 # Space stations 🚀
 
 <p>Desafio proposto pela <a href="https://voltbras.com.br/">Voltbras</a> :globe_with_meridians: para processo de seleção.</p>
+
 ---
-<br>
 <h2>Descrição 📌 <a name="description"></a></h2>
 
 Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos postos de carregamento e otimizar a experiência de recarga para os viajantes espaciais.
@@ -21,23 +21,25 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 
 ## Regras do projeto <a name="rules"></a>
 
- [ x ] Crie um servidor em Node.js usando Apollo GraphQL Server
+ - [x] Crie um servidor em Node.js usando Apollo GraphQL Server
 
- [ x ] Crie o schema GraphQL com uma query suitablePlanets, que retorna os dados dos planetas com gravidade alta
+ - [x] Crie o schema GraphQL com uma query suitablePlanets, que retorna os dados dos planetas com gravidade alta
 
- [ x ] Crie uma mutation installStation, que dado um planeta, instala uma estação de carregamento no planeta(é sugerido criar uma tabela em algum DB que guarde a informação de aonde estão instaladas as estações)
+ - [x] Crie uma mutation installStation, que dado um planeta, instala uma estação de carregamento no planeta(é sugerido criar uma tabela em algum DB que guarde a informação de aonde estão instaladas as estações)
 
- [ x ] Use um RESTDataSource para pegar os dados da NASA
+ - [x] Use um RESTDataSource para pegar os dados da NASA
 
- [ x ] Crie uma query stations, que irá listar todas as estações instaladas nos planetas
+ - [x] Crie uma query stations, que irá listar todas as estações instaladas nos planetas
  
- [ x ] Crie uma mutation recharge, que dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada.
+ - [x] Crie uma mutation recharge, que dado uma estação e um datetime de quanto a recarga irá finalizar, realiza uma recarga, começando a partir do momento em que a mutation foi chamada e finalizando com a datetime passada
 
  - Só é possível realizar uma recarga na estação por vez
  - Essa recarga deve estar atrelado a um usuário - sinta-se livre para implementar da maneira que você desejar.
  - Um usuário só pode ter no máximo uma recarga em andamento
 
-[ x ] Adicione autenticação (apenas um usuário autenticado poderá fazer uma recarga ou uma reserva)
+- [x] Adicione autenticação (apenas um usuário autenticado poderá fazer uma recarga ou uma reserva)
+
+- [x]  Crie uma query stationHistory, onde será possível visualizar o histórico de recargas de uma estação (mostrar o horário, o tempo de duração da recarga e o usuário que realizou-a)
 
 ---
 
@@ -85,6 +87,13 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 
 <br>
 
+## :zap: StationHistory
+
+<p>Com essa Query é possível visualizar o histórico de recargas de uma estação (mostrar o horário, o tempo de duração da recarga e o usuário que realizou-a).</p>
+
+![stationHistory](https://user-images.githubusercontent.com/70349830/130297533-176c81ad-36d1-4e98-9300-3e3fc6a8b03f.gif)
+
+
 <h2>🔌 Getting started</h2>
 
 Faça o clone do projeto:
@@ -113,7 +122,7 @@ Crie o arquivo ``.env`` na raiz do projeto e defina a variável de ambiente(MONG
 MONGO_URL: mongodb+srv://<username>:<password>@cluster0.rijg6.mongodb.net/VoltbrasDB?retryWrites=true&w=majority
 ```
 
->⚠️ Essa configuração é fundamental para o funcionamento da aplicação.
+<br>
 
 Inicie o projeto:
 ```bash
