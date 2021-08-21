@@ -31,7 +31,7 @@ class RechargeService {
     if (verifyPlanet.length) {
       verifyPlanet.forEach((element, index) => {
         if (verifyPlanet[index].isActiveRecharge) {
-          throw new ApolloError('Sorry, this station is busy!', 'MY_ERROR_CODE')
+          throw new ApolloError('Sorry, this station is busy!', 'STATION IS BUSY')
         }
       })
     }
