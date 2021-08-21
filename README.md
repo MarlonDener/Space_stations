@@ -41,6 +41,8 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 
 - [x]  Crie uma query stationHistory, onde será possível visualizar o histórico de recargas de uma estação (mostrar o horário, o tempo de duração da recarga e o usuário que realizou-a)
 
+- [x]  Crie uma mutation reservation, que dado uma estação, um usuário e um intervalo de tempo, cria uma reserva da estação para o usuário naquele determinado intervalo de tempo.
+
 ---
 
 <br>
@@ -93,6 +95,28 @@ Descobrir em quais planetas a empresa Voltbras poderá instalar seus novos posto
 
 ![stationHistory](https://user-images.githubusercontent.com/70349830/130297533-176c81ad-36d1-4e98-9300-3e3fc6a8b03f.gif)
 
+<br>
+
+## :zap: Reservation
+
+<p>Dado uma estação, um usuário e um intervalo de tempo, cria uma reserva da estação para o usuário naquele determinado intervalo de tempo.</p>
+
+![reservation](https://user-images.githubusercontent.com/70349830/130334632-f7ce80b5-55f9-405b-9c9a-4ef7f43bbea0.gif)
+
+<br>
+
+## :zap: UseReservedRecharge
+
+<p>A utilização só pode ocorrer dentro do próprio intervalo de tempo da reserva.</p>
+ <li>Perceba que no exemplo acima, eu agendo uma reserva das 17:40:00 até 19:00:00;</li>
+ <li>Inicialmente tento fazer o uso da reserva antes do tempo agendado, e perceba que obtive um erro, lembrando que se eu tentar usar a reserva acima da data final agendada, eu receberia o mesmo erro;</li>
+ <li>Depois ao tentar utilizar novamente a reserva, assim que já iniciada, a aplicação também gera um erro.</li>
+<br />
+
+![useReservedRecharge](https://user-images.githubusercontent.com/70349830/130334629-4ea14dce-fd5b-4799-a266-5826958f199c.gif)
+
+<br>
+...
 
 <h2>🔌 Getting started</h2>
 
