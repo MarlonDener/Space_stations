@@ -26,4 +26,4 @@ const PlanetsSchema = new mongoose.Schema({
 { timestamps: true }
 )
 
-module.exports = mongoose.model('Stations', PlanetsSchema)
+module.exports = mongoose.model('PlanetStation', PlanetsSchema)

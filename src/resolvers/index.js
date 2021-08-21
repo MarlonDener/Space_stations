@@ -5,6 +5,8 @@ const AuthenticateUserService = require('../services/AuthenticateUserService')
 const CreateUserService = require('../services/CreateUserService')
 const RechargeService = require('../services/RechargeService')
 const InstallStationService = require('../services/InstallStationService')
+const ReservationService = require('../services/ReservationService')
+const UseReservedRechargeService = require('../services/UseReservedRechargeService')
 
 const RechargeUtils = require('../utils/RechargeData')
 const { ApolloError } = require('apollo-server')
@@ -55,8 +57,20 @@ const resolvers = {
     },
     recharge: async (_, args, context, __) => {
       const createReacharge = RechargeService.handle(args, context)
+
       return createReacharge
+    },
+    reservation: async (_, args, context) => {
+      const createReservation = ReservationService.handle(args, context)
+
+      return createReservation
+    },
+    useReservedRecharge: async (_, args, context) => {
+      const reservation = UseReservedRechargeService.handle(args, context)
+
+      return reservation
     }
+
   }
 }
 

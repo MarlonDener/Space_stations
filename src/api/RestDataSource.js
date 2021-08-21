@@ -34,13 +34,14 @@ class GetDataNasa extends RESTDataSource {
     const verify = await AddPlanet.findOne({
       name: 'KELT-1 b'
     })
+
     if (verify) {
       const getPlanets = AddPlanet.find()
       return getPlanets
     } else {
-      AddPlanet.insertMany(suitablePlanets)
+      const results = await AddPlanet.insertMany(suitablePlanets)
+      return results
     }
-    return suitablePlanets
   }
 }
 module.exports = new GetDataNasa()

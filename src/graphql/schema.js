@@ -47,6 +47,13 @@ const typeDefs = gql`
         duration: String
         isActiveRecharge: Boolean
     }
+
+    type Reservation {
+        client: User
+        endDate: String
+        initialDate: String
+        reservationId: String
+    }
   
     type Query {
         suitablePlanets: [Planet]
@@ -54,12 +61,14 @@ const typeDefs = gql`
         getAllUsers: [allUsers]!
         stationHistory(idPlanet: String): [stationHistoryType]
     }
+
     type Mutation {
-        installStation(id: String, installedStations: String): install!  
+        installStation(idPlanet: String, nameStation: String): install!  
         createUser(name: String, email: String, password: String): User!
         signIn(email: String, password: String): Login!
         recharge(idClient: String, idPlanet: String, endDate: String): rechargeType!
-        
+        reservation(idClient: String, idPlanet: String, initialDate: String, endDate: String): rechargeType!
+        useReservedRecharge(idReservation: String): [Reservation]!
     }
 
 `

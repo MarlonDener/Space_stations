@@ -20,6 +20,9 @@ const UserSchema = new mongoose.Schema({
   isActiveRecharge: {
     type: Boolean,
     default: true
+  },
+  reservationId: {
+    type: String
   }
 })
 
