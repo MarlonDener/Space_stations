@@ -45,7 +45,6 @@ class RechargeService {
     }
 
     const insertQuery = await MongoRecharge.create({
-      isBusy: true,
       client: args.idClient,
       rechargePlace: args.idPlanet,
       endDate: args.endDate
