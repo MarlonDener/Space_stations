@@ -29,9 +29,9 @@ const typeDefs = gql`
     }
  
     type rechargeType {
-        _id: String
         client: String
         rechargePlace: String
+        reservationId: String
     }
 
     type allUsers {
