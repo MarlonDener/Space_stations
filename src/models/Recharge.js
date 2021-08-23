@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
   },
   rechargePlace: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'stations'
+    ref: 'PlanetStation'
   },
   initialDate: {
     type: Date,
