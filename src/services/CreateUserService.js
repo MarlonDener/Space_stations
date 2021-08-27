@@ -1,6 +1,7 @@
 const MongoUser = require('../models/User')
 const { hash, genSalt } = require('bcryptjs')
 
+// também curti essa, ficou muito legal!
 class CreateUserService {
   async handle (args) {
     const salt = await genSalt(8)

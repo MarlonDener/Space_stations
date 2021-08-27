@@ -1,4 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest')
+// AddPlanet nesse caso não ficou muito muito claro porque traz a ideia de ser uma ação, uma função
+// acho que chamar de "PlanetStation" ou simplesmente "Planet" deixaria melhor
 const AddPlanet = require('../models/PlanetStation')
 
 class GetDataNasa extends RESTDataSource {
@@ -18,30 +20,27 @@ class GetDataNasa extends RESTDataSource {
     const divider = response.search(/\[/)
     const data = response.slice(divider)
 
-    const readyData = JSON.parse(data)
-
-    const planets = []
-    readyData.forEach(planet =>
-      planets.push({
+    // particularmente eu prefiro usar um .map quando a ideia é
+    // pegar os itens de um array e fazer algum tipo de transformação
+    const planets = 
+      JSON.parse(data).map(planet => ({
         name: planet.pl_name,
         mass: planet.pl_bmassj
-      })
-    )
+      }));
+
     const suitablePlanets = planets.filter(
       planet => planet.mass && planet.name && planet.mass > 10
-    )
+    );
 
-    const verify = await AddPlanet.findOne({
-      name: 'KELT-1 b'
-    })
+    // não entendi exatamente o porque foi escolhido esse planeta para verificar 
+    // se os planetas deveriam ser inseridos no banco
+    // uma outra forma de fazer isso seria
 
-    if (verify) {
-      const getPlanets = AddPlanet.find()
-      return getPlanets
-    } else {
-      const results = await AddPlanet.insertMany(suitablePlanets)
-      return results
-    }
+    const planetsExists = await AddPlanet.exists();
+    if (planetsExists)
+      return AddPlanet.find();
+
+    return AddPlanet.insertMany(suitablePlanets);
   }
 }
 module.exports = new GetDataNasa()
