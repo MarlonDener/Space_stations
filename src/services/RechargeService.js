@@ -4,11 +4,12 @@ const MongoPlanets = require('../models/PlanetStation')
 const { ApolloError } = require('apollo-server')
 
 class RechargeService {
-  async handle (args, context) {
+  async handle(args, context) {
     const verifyClient = await MongoRecharge.find({
       client: args.idClient
     })
 
+    // isso já não seria validado pelo middleware?
     if (!context.token) {
       throw new ApolloError('You are not authenticated', 'ALERT')
     }
@@ -27,6 +28,7 @@ class RechargeService {
       rechargePlace: args.idPlanet
     })
 
+    // acho que faltou um await aqui, não sei se tu queria deixar assíncrono de propósito
     RechargeUtils.changeWhenRechargeOver()
     if (verifyPlanet.length) {
       verifyPlanet.forEach((element, index) => {

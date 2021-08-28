@@ -23,6 +23,7 @@ class UseReservedService {
       throw new ApolloError(`Hello ${reserved.client.name}! You already started this recharge`, 'Recharge already started')
     }
 
+    // boa!
     if (currentDate > new Date(reserved.initialDate) && currentDate < new Date(reserved.endDate)) {
       const result = []
       await reserved.updateOne({ isActiveRecharge: true })
