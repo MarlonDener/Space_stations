@@ -3,7 +3,6 @@ const AuthConfig = require('../config/auth')
 const MongoUser = require('../models/User')
 const { compare } = require('bcryptjs')
 
-// boa, essa classe ficou muito legal
 class AuthenticateUserService {
   async handle (args) {
     const user = await MongoUser.findOne({

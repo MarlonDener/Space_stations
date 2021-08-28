@@ -1,61 +1,69 @@
-const MongoRecharge = require('../models/Recharge')
-const RechargeUtils = require('../utils/RechargeData')
-const MongoPlanets = require('../models/PlanetStation')
-const { ApolloError } = require('apollo-server')
+const MongoRecharge = require("../models/Recharge");
+const RechargeUtils = require("../utils/RechargeData");
+const MongoPlanets = require("../models/PlanetStation");
+const { ApolloError } = require("apollo-server");
 
 class RechargeService {
   async handle(args, context) {
     const verifyClient = await MongoRecharge.find({
-      client: args.idClient
-    })
+      client: args.idClient,
+    });
 
-    // isso já não seria validado pelo middleware?
-    if (!context.token) {
-      throw new ApolloError('You are not authenticated', 'ALERT')
-    }
-    const verifyHasStation = await MongoPlanets.findById(args.idPlanet)
+    const verifyHasStation = await MongoPlanets.findById(args.idPlanet);
 
     if (!verifyHasStation.hasStation) {
-      throw new ApolloError('Sorry, there is no station on this planet!', 'STATION DOES NOT EXIST')
+      throw new ApolloError(
+        "Sorry, there is no station on this planet!",
+        "STATION DOES NOT EXIST"
+      );
     }
 
-    const currentDate = new Date()
+    const currentDate = new Date();
 
     if (new Date(args.endDate) < currentDate) {
-      throw new ApolloError('The date cannot be less than current date', 'INVALID DATE')
+      throw new ApolloError(
+        "The date cannot be less than current date",
+        "INVALID DATE"
+      );
     }
     const verifyPlanet = await MongoRecharge.find({
-      rechargePlace: args.idPlanet
-    })
+      rechargePlace: args.idPlanet,
+    });
 
-    // acho que faltou um await aqui, não sei se tu queria deixar assíncrono de propósito
-    RechargeUtils.changeWhenRechargeOver()
+    await RechargeUtils.changeWhenRechargeOver();
+
     if (verifyPlanet.length) {
       verifyPlanet.forEach((element, index) => {
         if (verifyPlanet[index].isActiveRecharge) {
-          throw new ApolloError('Sorry, this station is busy!', 'STATION IS BUSY')
+          throw new ApolloError(
+            "Sorry, this station is busy!",
+            "STATION IS BUSY"
+          );
         }
-      })
+      });
     }
 
     if (verifyClient.length) {
       verifyClient.forEach((element, index) => {
         if (verifyClient[index].isActiveRecharge) {
-          throw new ApolloError('You can only have one recharge in progress!', 'ALREADY RECHARGE')
+          throw new ApolloError(
+            "You can only have one recharge in progress!",
+            "ALREADY RECHARGE"
+          );
         }
-      })
+      });
     }
 
     const insertQuery = await MongoRecharge.create({
       client: args.idClient,
       rechargePlace: args.idPlanet,
-      endDate: args.endDate
-    })
+      endDate: args.endDate,
+    });
 
-    await insertQuery.save()
+    await insertQuery.save();
 
-    return insertQuery
+    return insertQuery;
   }
 }
 
-module.exports = new RechargeService()
+module.exports = new RechargeService();

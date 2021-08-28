@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const typeDefs = require('./graphql/schema')
 const resolvers = require('./resolvers')
 const GetDataNasa = require('./api/RestDataSource')
-const AuthenticationAssurance = require('./middlewares/AuthenticationAssurance')
+const authenticationAssurance = require('./middlewares/AuthenticationAssurance')
 
 dotenv.config()
 
@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URL, {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  authChecker: AuthenticationAssurance,
+  authChecker: authenticationAssurance,
   context: ({ req }) => {
     const context = {
       req,

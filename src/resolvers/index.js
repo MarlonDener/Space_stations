@@ -1,4 +1,4 @@
-const AddPlanet = require('../models/PlanetStation')
+const MongoPlanetStation = require('../models/PlanetStation')
 const MongoUser = require('../models/User')
 const MongoRecharge = require('../models/Recharge')
 const AuthenticateUserService = require('../services/AuthenticateUserService')
@@ -7,6 +7,7 @@ const RechargeService = require('../services/RechargeService')
 const InstallStationService = require('../services/InstallStationService')
 const ReservationService = require('../services/ReservationService')
 const UseReservedRechargeService = require('../services/UseReservedRechargeService')
+const StationHistoryService = require('../services/StationHistoryService')
 
 const RechargeUtils = require('../utils/RechargeData')
 const { ApolloError } = require('apollo-server')
@@ -18,7 +19,7 @@ const resolvers = {
       return data
     },
     stations: async () => {
-      const allStations = await AddPlanet.find({ installedStations: { $exists: true, $not: { $size: 0 } } })
+      const allStations = await MongoPlanetStation.find({ installedStations: { $exists: true, $not: { $size: 0 } } })
       return allStations
     },
     getAllUsers: async () => {
@@ -26,13 +27,14 @@ const resolvers = {
       return users
     },
     stationHistory: async (_, args) => {
-      RechargeUtils.changeWhenRechargeOver()
+      await RechargeUtils.changeWhenRechargeOver()
       try {
         const allHistory = await MongoRecharge.find(
           { rechargePlace: args.idPlanet }
         ).populate('client')
 
-        const dataAboutRecharge = RechargeUtils.RechargeData(allHistory)
+        const dataAboutRecharge = StationHistoryService.handle(allHistory)
+
         return dataAboutRecharge
       } catch (err) {
         throw new ApolloError('planet does not exist, or does not have a station')

@@ -10,9 +10,6 @@ class ReservationService {
       client: args.idClient
     })
 
-    if (!context.token) {
-      throw new ApolloError('You are not authenticated', 'ALERT')
-    }
     const verifyHasStation = await MongoPlanets.findById(args.idPlanet)
 
     if (!verifyHasStation.hasStation) {
